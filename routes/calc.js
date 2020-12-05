@@ -40,4 +40,17 @@ function mul(req, res) {
     res.json(result);
 }
 
+router.get('/sub', sub);
+function sub(req, res) {
+    let z1 = req.query.zahl1;   // http://....?zahl1=XXXXX
+    let z2 = req.query.zahl2;   // http://....?zahl2=XXXXX bzw. ...?..&zahl2=XXXX
+    let result = parseFloat(z1) - parseFloat(z2);
+    res.json(result);
+}
+
+router.post('/div', div);
+function div(req, res) {
+    res.json(req.body.zahl1 / req.body.zahl2);
+}
+
 module.exports = router;
