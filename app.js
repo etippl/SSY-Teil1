@@ -9,9 +9,11 @@ app.use(express.urlencoded({extended: false}));
 
 // Load routes into variables
 const index = require('./routes/index');
+const calc = require('./routes/calc');
 
 // Routes
 app.use('/was', index);
+app.use('/calc', calc);
 
 // http://localhost:3000/was/noch
 // --------------------^           damit überhaupt Verbindung hergestellt
