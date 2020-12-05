@@ -10,10 +10,12 @@ app.use(express.urlencoded({extended: false}));
 // Load routes into variables
 const index = require('./routes/index');
 const calc = require('./routes/calc');
+const users = require('./routes/users');
 
 // Routes
 app.use('/was', index);
 app.use('/calc', calc);
+app.use('/users', users);
 
 // http://localhost:3000/was/noch
 // --------------------^           damit überhaupt Verbindung hergestellt
