@@ -11,7 +11,12 @@ app.use(express.urlencoded({extended: false}));
 const index = require('./routes/index');
 
 // Routes
-app.use('/', index);
+app.use('/was', index);
+
+// http://localhost:3000/was/noch
+// --------------------^           damit überhaupt Verbindung hergestellt
+//                      ^--^       Präfix aus app.js
+//                          ^----  Route in routes/index.js
 
 
 module.exports = app;
